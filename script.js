@@ -14,6 +14,7 @@
     nav_main_label: 'مرکزی نیویگیشن',
     nav_services: 'خدمات',
     nav_film: 'نمایاں فلم',
+    nav_latest: 'تازہ ترین کام',
     nav_pricing: 'قیمتیں',
     nav_about: 'میرے بارے میں',
     nav_faq: 'عام سوالات',
@@ -96,6 +97,22 @@
     latest4_caption: 'برانڈ ٹیزر · 13 سیکنڈ · عمودی',
     latest4_desc: 'خزف — ہاتھ کی پینٹ شدہ سیرامکس برانڈ — کے لیے نرم، خواب جیسا ٹیزر: لفظوں "اگر عام سا ہوتا تو…" کے پاس سے گزرتا گرتا پھول کا پتا، مٹی پر گلابی پھول کو زندگی دیتا برش، اور اختتام پر وعدہ — "جلد آ رہا ہے۔"',
     latest4_tag: 'جلد آ رہا ہے · 13 سیکنڈ',
+    cta_eyebrow: 'ریلز · ٹک ٹاک · شارٹس',
+    cta_h: 'ایسا ہی عمودی ٹیزر چاہیے؟',
+    cta_p: 'فیڈ کے لیے بنائے گئے عمودی ٹیزرز — آپ کی پروڈکٹ کے گرد تیار، وائس اوور اور ایڈیٹنگ کے ساتھ، سب ٹائٹلز اور لانچ کے لیے تیار تکمیل کے ساتھ۔',
+    cta_btn: 'واٹس ایپ پر پوچھیں',
+    price_anchor: 'پیکجز $5 سے — قیمتیں دیکھیں ↓',
+    rev_eyebrow: 'کلائنٹ کی محبت',
+    rev_h2: 'اصل کلائنٹس کے پانچ ستارہ الفاظ',
+    rev_lead: 'کلائنٹس اور ساتھی میرے ساتھ کام کے بارے میں کیا کہتے ہیں۔',
+    rev1_q: '"یہ واقعی ایک اچھا تجربہ تھا، ہمیں ہماری ویب سائٹ وقت پر موصول ہوئی"',
+    rev1_role: 'ویب سائٹ ڈویلپمنٹ · رکھزار ٹیک · اکتوبر 2026',
+    rev2_q: '"میں بہت مطمئن ہوں کیونکہ مجھے میری ویب سائٹ وقت پر مکمل موصول ہوئی ☺️"',
+    rev2_role: 'اکتوبر 2026',
+    rev3_q: '"حیرت انگیز سروس! مکمل طور پر مطمئن.."',
+    rev3_role: 'اکتوبر 2026',
+    rev_cta_pre: 'ایسے ہی نتائج چاہئیں؟',
+    rev_cta_link: 'مجھے فائیور پر ہائر کریں',
     proc_eyebrow: 'طریقہ کار',
     proc_h2: 'پروڈکٹ سے شائع شدہ ویڈیو تک، صرف 4 مراحل میں',
     proc1_t: 'اپنی پروڈکٹ بتائیں',
@@ -156,6 +173,7 @@
     form_name_ph: 'مثلاً عائشہ خان',
     form_product: 'آپ کی پروڈکٹ',
     form_product_ph: 'مثلاً رال کے زیورات، رئیل اسٹیٹ، ملبوسات...',
+    form_product_error: 'براہ کرم بتائیں کہ آپ کی پروڈکٹ کیا ہے — چند الفاظ ہی کافی ہیں۔',
     form_type: 'ویڈیو کی قسم',
     form_opt1: 'اے آئی ویڈیو اشتہار (سوشل میڈیا)',
     form_opt2: 'ریل / ٹک ٹاک / شارٹ',
@@ -301,16 +319,15 @@
     });
   });
 
-  /* WebP poster upgrade (JPEG stays as the no-WebP fallback) */
-  try {
-    var c = document.createElement('canvas');
-    if (c.toDataURL('image/webp').indexOf('data:image/webp') === 0) {
-      videos.forEach(function (v) {
-        var p = v.getAttribute('poster');
-        if (p && /\.jpg$/.test(p)) v.setAttribute('poster', p.replace(/\.jpg$/, '.webp'));
-      });
-    }
-  } catch (e) {}
+  /* Posters ship as WebP directly in the markup — no runtime swap,
+     so a JPG poster is never downloaded. */
+
+  /* Reduced motion: the hero must not autoplay */
+  var heroVideo = document.querySelector('.hero-video');
+  if (heroVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    heroVideo.removeAttribute('autoplay');
+    heroVideo.pause();
+  }
 
   /* ================= FAQ accordion ================= */
   document.querySelectorAll('.faq-toggle').forEach(function (btn) {
@@ -374,16 +391,23 @@
     lbCaption.textContent = cap ? cap.textContent.trim() : '';
     lbCount.textContent = '(' + (lbIndex + 1) + ' / ' + stripItems.length + ')';
   }
+  var bgInertEls = [];
+  function lbSetInert(on) {
+    bgInertEls = Array.prototype.slice.call(document.querySelectorAll('header, main, footer, .wa-float'));
+    bgInertEls.forEach(function (el) { el.inert = on; });
+  }
   function lbOpen(i) {
     lastFocus = document.activeElement;
     lbShow(i);
     lightbox.hidden = false;
     document.body.style.overflow = 'hidden';
+    lbSetInert(true);
     lbClose.focus();
   }
   function lbCloseFn() {
     lightbox.hidden = true;
     document.body.style.overflow = '';
+    lbSetInert(false);
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
   if (lightbox && stripItems.length) {
@@ -403,6 +427,15 @@
       if (e.key === 'Escape') lbCloseFn();
       else if (e.key === 'ArrowRight') lbShow(lbIndex + (rtl ? -1 : 1));
       else if (e.key === 'ArrowLeft') lbShow(lbIndex + (rtl ? 1 : -1));
+      else if (e.key === 'Tab') {
+        /* Focus trap: cycle only among the lightbox controls */
+        var focusables = [lbClose, lbPrev, lbNext];
+        var idx = focusables.indexOf(document.activeElement);
+        e.preventDefault();
+        if (e.shiftKey) idx = idx <= 0 ? focusables.length - 1 : idx - 1;
+        else idx = idx >= focusables.length - 1 ? 0 : idx + 1;
+        focusables[idx].focus();
+      }
     });
   }
 
@@ -444,13 +477,31 @@
 
   /* ================= WhatsApp brief form ================= */
   var form = document.getElementById('briefForm');
+  var productInput = document.getElementById('bfProduct');
+  var productError = document.getElementById('bfProductError');
+  function setProductError(show) {
+    if (!productInput || !productError) return;
+    productError.hidden = !show;
+    productInput.setAttribute('aria-invalid', show ? 'true' : 'false');
+  }
+  if (productInput) {
+    productInput.addEventListener('input', function () {
+      if (productInput.value.trim()) setProductError(false);
+    });
+  }
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var name = document.getElementById('bfName').value.trim();
-      var product = document.getElementById('bfProduct').value.trim();
+      var product = productInput.value.trim();
       var type = document.getElementById('bfType').value;
       var msg = document.getElementById('bfMsg').value.trim();
+      if (!product) {
+        setProductError(true);
+        productInput.focus();
+        return;
+      }
+      setProductError(false);
       var lines = ['Hi Usman, I want an AI video for my product...'];
       if (name) lines.push('Name: ' + name);
       lines.push('Product: ' + product);
@@ -459,6 +510,29 @@
       var url = 'https://wa.me/923187579301?text=' + encodeURIComponent(lines.join('\n'));
       window.open(url, '_blank', 'noopener');
     });
+  }
+
+  /* ================= WhatsApp float: fade while typing / at footer ================= */
+  var waFloat = document.querySelector('.wa-float');
+  if (waFloat) {
+    var footerInView = false;
+    var setFloatDim = function () {
+      var typing = !!(form && form.contains(document.activeElement));
+      waFloat.classList.toggle('dim', typing || footerInView);
+    };
+    if (form) {
+      form.addEventListener('focusin', setFloatDim);
+      form.addEventListener('focusout', function () { setTimeout(setFloatDim, 0); });
+    }
+    var siteFooter = document.querySelector('.site-footer');
+    if (siteFooter && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          footerInView = en.isIntersecting;
+          setFloatDim();
+        });
+      }).observe(siteFooter);
+    }
   }
 
   /* ================= Footer year + initial state ================= */
