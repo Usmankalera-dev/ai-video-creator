@@ -444,3 +444,19 @@ html[lang="ur"] .share-label{letter-spacing:0}
 /* ============ Round 4: Latest work (Rakhzaar bag teaser) ============ */
 .film-video.wide{aspect-ratio:848/478}
 .latest-card{margin-bottom:0}
+
+/* ============ Round 5: Latest work grid (3 cards) ============ */
+.latest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;align-items:start}
+.latest-grid .film-card{margin-bottom:0}
+.latest-grid .film-meta{padding:1.25rem .2rem .35rem}
+.latest-grid .film-meta h3{font-size:clamp(1.25rem,2.6vw,1.55rem)}
+.latest-grid .film-meta p:not(.film-caption){font-size:.95rem}
+.film-video.hd{aspect-ratio:16/9}
+@media (max-width:1100px){
+  .latest-grid{grid-template-columns:1fr 1fr}
+  .latest-grid .film-card:last-child{grid-column:1/-1;width:calc(50% - .7rem);justify-self:center}
+}
+@media (max-width:700px){
+  .latest-grid{grid-template-columns:1fr}
+  .latest-grid .film-card:last-child{grid-column:auto;width:auto;justify-self:stretch}
+}
