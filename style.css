@@ -454,9 +454,20 @@ html[lang="ur"] .share-label{letter-spacing:0}
 .film-video.hd{aspect-ratio:16/9}
 @media (max-width:1100px){
   .latest-grid{grid-template-columns:1fr 1fr}
-  .latest-grid .film-card:last-child{grid-column:1/-1;width:calc(50% - .7rem);justify-self:center}
 }
 @media (max-width:700px){
   .latest-grid{grid-template-columns:1fr}
-  .latest-grid .film-card:last-child{grid-column:auto;width:auto;justify-self:stretch}
+}
+
+/* ============ Round 6: Latest work — Khazaf portrait card ============ */
+.film-video.portrait{aspect-ratio:9/16}
+.latest-card-portrait{
+  grid-column:1/-1;width:100%;max-width:352px;justify-self:center;
+}
+.latest-card-portrait .film-meta p:not(.film-caption){max-width:340px}
+@media (max-width:1100px){
+  .latest-card-portrait{max-width:340px}
+}
+@media (max-width:700px){
+  .latest-card-portrait{max-width:min(340px,100%)}
 }
