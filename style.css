@@ -440,3 +440,7 @@ html[lang="ur"] .share-label{letter-spacing:0}
   .lang-toggle{padding:.36rem .6rem}
   .wa-float{right:16px;bottom:16px;width:54px;height:54px}
 }
+
+/* ============ Round 4: Latest work (Rakhzaar bag teaser) ============ */
+.film-video.wide{aspect-ratio:848/478}
+.latest-card{margin-bottom:0}
