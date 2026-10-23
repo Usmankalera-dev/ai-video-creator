@@ -20,7 +20,7 @@
     });
   }
 
-  /* ---------- Showcase: only one video plays at a time ---------- */
+  /* ---------- Videos: only one plays at a time ---------- */
   var videos = Array.prototype.slice.call(document.querySelectorAll('video'));
   videos.forEach(function (v) {
     v.addEventListener('play', function () {
