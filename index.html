@@ -9,7 +9,10 @@
 <meta name="author" content="Usman Kalera">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://usmankalera-dev.github.io/ai-video-creator/">
-<meta name="theme-color" content="#17101d">
+<link rel="alternate" hreflang="en" href="https://usmankalera-dev.github.io/ai-video-creator/">
+<link rel="alternate" hreflang="ur" href="https://usmankalera-dev.github.io/ai-video-creator/">
+<link rel="alternate" hreflang="x-default" href="https://usmankalera-dev.github.io/ai-video-creator/">
+<meta name="theme-color" id="themeColor" content="#17101d">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -30,8 +33,9 @@
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script>(function(){try{var t=localStorage.getItem('uk-theme');if(t)document.documentElement.setAttribute('data-theme',t);var l=localStorage.getItem('uk-lang');if(l==='ur'){document.documentElement.setAttribute('lang','ur');document.documentElement.setAttribute('dir','rtl');}}catch(e){}})();</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -138,23 +142,34 @@
 <body>
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="#top" aria-label="Usman Kalera — AI Video Creator, back to top">
+    <a class="brand" href="#top" aria-label="Usman Kalera — AI Video Creator, back to top" data-i18n-aria="brand_label">
       <span class="brand-mark" aria-hidden="true">
         <svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true"><rect x="2" y="2" width="60" height="60" rx="16" fill="#241830"/><path d="M26 20.5v23c0 1.8 2 2.9 3.5 2L46 34a2.4 2.4 0 0 0 0-4L29.5 18.5c-1.5-.9-3.5.2-3.5 2z" fill="#e0a58f"/></svg>
       </span>
-      <span class="brand-text">Usman Kalera<small>AI Video Creator</small></span>
+      <span class="brand-text">Usman Kalera<small data-i18n="brand_role">AI Video Creator</small></span>
     </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="site-nav" id="siteNav" aria-label="Main navigation">
-      <a href="#services">Services</a>
-      <a href="#film">Featured Film</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#about">About</a>
-      <a href="#faq">FAQ</a>
-      <a class="nav-cta" href="#contact">Get a Video</a>
-    </nav>
+    <div class="header-right">
+      <nav class="site-nav" id="siteNav" aria-label="Main navigation" data-i18n-aria="nav_main_label">
+        <a href="#services" data-i18n="nav_services">Services</a>
+        <a href="#film" data-i18n="nav_film">Featured Film</a>
+        <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
+        <a href="#about" data-i18n="nav_about">About</a>
+        <a href="#faq" data-i18n="nav_faq">FAQ</a>
+        <a class="nav-cta" href="#contact" data-i18n="nav_cta">Get a Video</a>
+      </nav>
+      <div class="hdr-actions">
+        <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language / زبان تبدیل کریں">
+          <span class="lang-opt is-active" data-lang-opt="en">EN</span><span class="lang-sep" aria-hidden="true">|</span><span class="lang-opt" data-lang-opt="ur">اردو</span>
+        </button>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" fill="currentColor"><path d="M20.6 14.2A8.5 8.5 0 1 1 9.8 3.4a7 7 0 1 0 10.8 10.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4m0-14.2-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
+        </button>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -164,57 +179,57 @@
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="container hero-grid">
       <div class="hero-copy reveal">
-        <p class="eyebrow">AI Video Creator · Lahore, Pakistan · Working Worldwide</p>
-        <h1>Usman Kalera <span class="h1-sub">AI Video Creator</span></h1>
-        <p class="value-prop">Scroll-stopping AI video ads, reels and product films for your brand — with Urdu &amp; English voiceovers, delivered in days, from just $5.</p>
+        <p class="eyebrow" data-i18n="hero_eyebrow">AI Video Creator · Lahore, Pakistan · Working Worldwide</p>
+        <h1>Usman Kalera <span class="h1-sub" data-i18n="hero_role">AI Video Creator</span></h1>
+        <p class="value-prop" data-i18n="hero_prop">Scroll-stopping AI video ads, reels and product films for your brand — with Urdu &amp; English voiceovers, delivered in days, from just $5.</p>
         <div class="hero-ctas">
           <a class="btn btn-whatsapp" href="https://wa.me/923187579301?text=Hi%20Usman%2C%20I%20want%20an%20AI%20video%20for%20my%20product..." target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.7l.5-.6c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3z"/></svg>
-            Order on WhatsApp
+            <span data-i18n="btn_whatsapp">Order on WhatsApp</span>
           </a>
-          <a class="btn btn-fiverr" href="https://www.fiverr.com/usman0_kalera" target="_blank" rel="noopener">Hire me on Fiverr</a>
+          <a class="btn btn-fiverr" href="https://www.fiverr.com/usman0_kalera" target="_blank" rel="noopener" data-i18n="btn_fiverr">Hire me on Fiverr</a>
           <a class="btn btn-watch" href="#film">
             <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M8 5.5v13c0 .8.9 1.3 1.6.9l10-6.5c.6-.4.6-1.4 0-1.8l-10-6.5c-.7-.4-1.6.1-1.6.9z"/></svg>
-            Watch the film
+            <span data-i18n="btn_watch">Watch the film</span>
           </a>
         </div>
         <ul class="hero-points">
-          <li>From $5</li>
-          <li>Delivery in 2–5 days</li>
-          <li>Urdu &amp; English voiceovers</li>
+          <li data-i18n="hero_point1">From $5</li>
+          <li data-i18n="hero_point2">Delivery in 2–5 days</li>
+          <li data-i18n="hero_point3">Urdu &amp; English voiceovers</li>
         </ul>
       </div>
       <figure class="hero-media reveal">
         <video class="hero-video" autoplay muted loop playsinline preload="metadata"
                poster="assets/images/poster-mehran.jpg"
                src="assets/videos/mehran-cinematic.mp4"
-               aria-label="Cinematic AI film of a white Suzuki Mehran by Usman Kalera"></video>
-        <figcaption>Cinematic Car Film — Suzuki Mehran · AI-generated &amp; edited by Usman</figcaption>
+               aria-label="Cinematic AI film of a white Suzuki Mehran by Usman Kalera" data-i18n-aria="hero_video_label"></video>
+        <figcaption data-i18n="hero_caption">Cinematic Car Film — Suzuki Mehran · AI-generated &amp; edited by Usman</figcaption>
       </figure>
     </div>
   </section>
 
   <!-- ============ TRUST STRIP ============ -->
-  <div class="trust-strip" aria-label="Good to know">
+  <div class="trust-strip" aria-label="Good to know" data-i18n-aria="trust_label">
     <div class="container trust-inner">
-      <span>From $5</span><span class="dot" aria-hidden="true">✦</span>
-      <span>Delivery in 2–5 days</span><span class="dot" aria-hidden="true">✦</span>
-      <span>Urdu &amp; English voiceovers</span><span class="dot" aria-hidden="true">✦</span>
-      <span>Revisions on every package</span>
+      <span data-i18n="trust_1">From $5</span><span class="dot" aria-hidden="true">✦</span>
+      <span data-i18n="trust_2">Delivery in 2–5 days</span><span class="dot" aria-hidden="true">✦</span>
+      <span data-i18n="trust_3">Urdu &amp; English voiceovers</span><span class="dot" aria-hidden="true">✦</span>
+      <span data-i18n="trust_4">Revisions on every package</span>
     </div>
   </div>
 
   <!-- ============ MARQUEE ============ -->
-  <div class="marquee" aria-label="Skills">
+  <div class="marquee" aria-label="Skills" data-i18n-aria="marquee_label">
     <div class="marquee-track">
-      <span>AI Video Ads</span><span class="dot" aria-hidden="true">✦</span>
-      <span>Reels &amp; TikTok</span><span class="dot" aria-hidden="true">✦</span>
-      <span>UGC Product Videos</span><span class="dot" aria-hidden="true">✦</span>
-      <span>Cinematic Films</span><span class="dot" aria-hidden="true">✦</span>
-      <span>Urdu Voiceover</span><span class="dot" aria-hidden="true">✦</span>
-      <span>English Voiceover</span><span class="dot" aria-hidden="true">✦</span>
-      <span>Subtitles</span><span class="dot" aria-hidden="true">✦</span>
-      <span>Consistent Characters</span><span class="dot" aria-hidden="true">✦</span>
+      <span data-i18n="mq_ads">AI Video Ads</span><span class="dot" aria-hidden="true">✦</span>
+      <span data-i18n="mq_reels">Reels &amp; TikTok</span><span class="dot" aria-hidden="true">✦</span>
+      <span data-i18n="mq_ugc">UGC Product Videos</span><span class="dot" aria-hidden="true">✦</span>
+      <span data-i18n="mq_films">Cinematic Films</span><span class="dot" aria-hidden="true">✦</span>
+      <span data-i18n="mq_urdu">Urdu Voiceover</span><span class="dot" aria-hidden="true">✦</span>
+      <span data-i18n="mq_english">English Voiceover</span><span class="dot" aria-hidden="true">✦</span>
+      <span data-i18n="mq_subs">Subtitles</span><span class="dot" aria-hidden="true">✦</span>
+      <span data-i18n="mq_chars">Consistent Characters</span><span class="dot" aria-hidden="true">✦</span>
       <span aria-hidden="true">AI Video Ads</span><span class="dot" aria-hidden="true">✦</span>
       <span aria-hidden="true">Reels &amp; TikTok</span><span class="dot" aria-hidden="true">✦</span>
       <span aria-hidden="true">UGC Product Videos</span><span class="dot" aria-hidden="true">✦</span>
@@ -229,34 +244,34 @@
   <!-- ============ SERVICES ============ -->
   <section class="section" id="services">
     <div class="container">
-      <p class="eyebrow reveal">What I make</p>
-      <h2 class="reveal">Video services that sell</h2>
-      <p class="section-lead reveal">Every video is planned, generated and edited by me personally — no templates, no stock footage look. Pick the format your product needs.</p>
+      <p class="eyebrow reveal" data-i18n="svc_eyebrow">What I make</p>
+      <h2 class="reveal" data-i18n="svc_h2">Video services that sell</h2>
+      <p class="section-lead reveal" data-i18n="svc_lead">Every video is planned, generated and edited by me personally — no templates, no stock footage look. Pick the format your product needs.</p>
       <div class="cards services-grid">
         <article class="card reveal">
           <div class="card-icon" aria-hidden="true">📣</div>
-          <h3>AI Video Ads for Social Media</h3>
-          <p>Product ads built for Facebook, Instagram and YouTube — a strong hook in the first 3 seconds, clear offer, and a call to action that gets clicks.</p>
+          <h3 data-i18n="svc1_t">AI Video Ads for Social Media</h3>
+          <p data-i18n="svc1_p">Product ads built for Facebook, Instagram and YouTube — a strong hook in the first 3 seconds, clear offer, and a call to action that gets clicks.</p>
         </article>
         <article class="card reveal">
           <div class="card-icon" aria-hidden="true">🎬</div>
-          <h3>Reels, TikTok &amp; Shorts</h3>
-          <p>Vertical short-form videos made for the feed: fast cuts, on-screen text, trending structure and a loop-friendly ending that lifts watch time.</p>
+          <h3 data-i18n="svc2_t">Reels, TikTok &amp; Shorts</h3>
+          <p data-i18n="svc2_p">Vertical short-form videos made for the feed: fast cuts, on-screen text, trending structure and a loop-friendly ending that lifts watch time.</p>
         </article>
         <article class="card reveal">
           <div class="card-icon" aria-hidden="true">🤳</div>
-          <h3>UGC-Style Product Videos</h3>
-          <p>Natural, presenter-style videos that feel like a real customer review — the format buyers trust most, for products, apps and real estate.</p>
+          <h3 data-i18n="svc3_t">UGC-Style Product Videos</h3>
+          <p data-i18n="svc3_p">Natural, presenter-style videos that feel like a real customer review — the format buyers trust most, for products, apps and real estate.</p>
         </article>
         <article class="card reveal">
           <div class="card-icon" aria-hidden="true">🎞️</div>
-          <h3>Cinematic Product Films</h3>
-          <p>Premium multi-angle films with smooth camera moves, music and title screens — the kind of video that makes an everyday product look like a brand.</p>
+          <h3 data-i18n="svc4_t">Cinematic Product Films</h3>
+          <p data-i18n="svc4_p">Premium multi-angle films with smooth camera moves, music and title screens — the kind of video that makes an everyday product look like a brand.</p>
         </article>
         <article class="card reveal">
           <div class="card-icon" aria-hidden="true">🎙️</div>
-          <h3>Urdu &amp; English Voiceovers</h3>
-          <p>Clear AI voiceovers in Urdu or English, with matching subtitles — perfect for Pakistani and Gulf audiences who buy from video.</p>
+          <h3 data-i18n="svc5_t">Urdu &amp; English Voiceovers</h3>
+          <p data-i18n="svc5_p">Clear AI voiceovers in Urdu or English, with matching subtitles — perfect for Pakistani and Gulf audiences who buy from video.</p>
         </article>
       </div>
     </div>
@@ -265,42 +280,42 @@
   <!-- ============ FEATURED FILM ============ -->
   <section class="section section-alt" id="film">
     <div class="container">
-      <p class="eyebrow reveal">Featured film</p>
-      <h2 class="reveal">One photo in. A whole film out.</h2>
-      <p class="section-lead reveal">My signature piece: a complete cinematic car film generated and edited from a single photograph — every angle consistent, with music, title and ending screens.</p>
+      <p class="eyebrow reveal" data-i18n="film_eyebrow">Featured film</p>
+      <h2 class="reveal" data-i18n="film_h2">One photo in. A whole film out.</h2>
+      <p class="section-lead reveal" data-i18n="film_lead">My signature piece: a complete cinematic car film generated and edited from a single photograph — every angle consistent, with music, title and ending screens.</p>
 
       <article class="film-card reveal">
         <div class="film-player">
           <video class="film-video" preload="metadata" playsinline controls
                  poster="assets/images/poster-mehran.jpg"
                  src="assets/videos/mehran-cinematic.mp4"
-                 aria-label="Cinematic car film of a Suzuki Mehran, 63 seconds"></video>
+                 aria-label="Cinematic car film of a Suzuki Mehran, 63 seconds" data-i18n-aria="film_video_label"></video>
         </div>
         <div class="film-meta">
-          <h3>Cinematic Car Film — Suzuki Mehran</h3>
-          <p class="film-caption">AI-generated &amp; edited by Usman · 63 seconds · with music</p>
-          <p>Built from one photo of the car: a slow push-in with the headlights moment, a glide along the side, close-up details, a high-angle reveal and a wide golden finale. The car, its plate and the street stay consistent in every shot — the hardest part of AI video, done right.</p>
-          <span class="tag">Cinematic Film · 63s</span>
+          <h3 data-i18n="film_title">Cinematic Car Film — Suzuki Mehran</h3>
+          <p class="film-caption" data-i18n="film_caption">AI-generated &amp; edited by Usman · 63 seconds · with music</p>
+          <p data-i18n="film_desc">Built from one photo of the car: a slow push-in with the headlights moment, a glide along the side, close-up details, a high-angle reveal and a wide golden finale. The car, its plate and the street stay consistent in every shot — the hardest part of AI video, done right.</p>
+          <span class="tag" data-i18n="film_tag">Cinematic Film · 63s</span>
         </div>
       </article>
 
-      <h3 class="strip-title reveal">Scenes from the film</h3>
+      <h3 class="strip-title reveal" data-i18n="strip_title">Scenes from the film</h3>
       <div class="film-strip reveal">
-        <figure class="strip-item">
-          <img src="assets/images/strip-1.jpg" alt="Front three-quarter view of the white Suzuki Mehran with its headlight switched on, showing the Mehran badge" loading="lazy" width="1104" height="832">
-          <figcaption>Opening — headlights on</figcaption>
+        <figure class="strip-item" tabindex="0" role="button" data-index="0" aria-haspopup="dialog">
+          <picture><source srcset="assets/images/strip-1.webp" type="image/webp"><img src="assets/images/strip-1.jpg" alt="Front three-quarter view of the white Suzuki Mehran with its headlight switched on, showing the Mehran badge" data-i18n-alt="strip_alt1" loading="lazy" width="1104" height="832"></picture>
+          <figcaption data-i18n="strip_cap1">Opening — headlights on</figcaption>
         </figure>
-        <figure class="strip-item">
-          <img src="assets/images/strip-2.jpg" alt="Side profile of the white Suzuki Mehran, gliding along the doors towards the front wheel" loading="lazy" width="1104" height="832">
-          <figcaption>Gliding along the side</figcaption>
+        <figure class="strip-item" tabindex="0" role="button" data-index="1" aria-haspopup="dialog">
+          <picture><source srcset="assets/images/strip-2.webp" type="image/webp"><img src="assets/images/strip-2.jpg" alt="Side profile of the white Suzuki Mehran, gliding along the doors towards the front wheel" data-i18n-alt="strip_alt2" loading="lazy" width="1104" height="832"></picture>
+          <figcaption data-i18n="strip_cap2">Gliding along the side</figcaption>
         </figure>
-        <figure class="strip-item">
-          <img src="assets/images/strip-3.jpg" alt="Close-up of the Suzuki Mehran headlight and grille with the lamp lit" loading="lazy" width="1104" height="832">
-          <figcaption>Headlight &amp; grille detail</figcaption>
+        <figure class="strip-item" tabindex="0" role="button" data-index="2" aria-haspopup="dialog">
+          <picture><source srcset="assets/images/strip-3.webp" type="image/webp"><img src="assets/images/strip-3.jpg" alt="Close-up of the Suzuki Mehran headlight and grille with the lamp lit" data-i18n-alt="strip_alt3" loading="lazy" width="1104" height="832"></picture>
+          <figcaption data-i18n="strip_cap3">Headlight &amp; grille detail</figcaption>
         </figure>
-        <figure class="strip-item">
-          <img src="assets/images/strip-4.jpg" alt="Wide final shot of the white Suzuki Mehran parked outside a house gate in warm evening light" loading="lazy" width="1104" height="832">
-          <figcaption>The wide finale</figcaption>
+        <figure class="strip-item" tabindex="0" role="button" data-index="3" aria-haspopup="dialog">
+          <picture><source srcset="assets/images/strip-4.webp" type="image/webp"><img src="assets/images/strip-4.jpg" alt="Wide final shot of the white Suzuki Mehran parked outside a house gate in warm evening light" data-i18n-alt="strip_alt4" loading="lazy" width="1104" height="832"></picture>
+          <figcaption data-i18n="strip_cap4">The wide finale</figcaption>
         </figure>
       </div>
     </div>
@@ -309,28 +324,28 @@
   <!-- ============ PROCESS ============ -->
   <section class="section" id="process">
     <div class="container">
-      <p class="eyebrow reveal">How it works</p>
-      <h2 class="reveal">From product to posted video in 4 steps</h2>
+      <p class="eyebrow reveal" data-i18n="proc_eyebrow">How it works</p>
+      <h2 class="reveal" data-i18n="proc_h2">From product to posted video in 4 steps</h2>
       <ol class="process-grid">
         <li class="process-step reveal">
           <span class="step-num" aria-hidden="true">1</span>
-          <h3>Share your product</h3>
-          <p>Send your product photos or a product link on WhatsApp, plus a line about your offer.</p>
+          <h3 data-i18n="proc1_t">Share your product</h3>
+          <p data-i18n="proc1_p">Send your product photos or a product link on WhatsApp, plus a line about your offer.</p>
         </li>
         <li class="process-step reveal">
           <span class="step-num" aria-hidden="true">2</span>
-          <h3>Concept &amp; script</h3>
-          <p>I write the hook, script and shot plan — and confirm the direction with you.</p>
+          <h3 data-i18n="proc2_t">Concept &amp; script</h3>
+          <p data-i18n="proc2_p">I write the hook, script and shot plan — and confirm the direction with you.</p>
         </li>
         <li class="process-step reveal">
           <span class="step-num" aria-hidden="true">3</span>
-          <h3>AI generation &amp; editing</h3>
-          <p>Scenes are generated, voiced, subtitled and edited into a polished final cut.</p>
+          <h3 data-i18n="proc3_t">AI generation &amp; editing</h3>
+          <p data-i18n="proc3_p">Scenes are generated, voiced, subtitled and edited into a polished final cut.</p>
         </li>
         <li class="process-step reveal">
           <span class="step-num" aria-hidden="true">4</span>
-          <h3>Delivery in 2–5 days</h3>
-          <p>You receive a ready-to-post MP4, plus your included revisions to perfect it.</p>
+          <h3 data-i18n="proc4_t">Delivery in 2–5 days</h3>
+          <p data-i18n="proc4_p">You receive a ready-to-post MP4, plus your included revisions to perfect it.</p>
         </li>
       </ol>
     </div>
@@ -339,45 +354,45 @@
   <!-- ============ PRICING ============ -->
   <section class="section section-alt" id="pricing">
     <div class="container">
-      <p class="eyebrow reveal">Pricing</p>
-      <h2 class="reveal">Simple, honest packages</h2>
-      <p class="section-lead reveal">The same packages as my Fiverr gig — no hidden charges. Need several videos? Ask on WhatsApp for a bundle price.</p>
+      <p class="eyebrow reveal" data-i18n="price_eyebrow">Pricing</p>
+      <h2 class="reveal" data-i18n="price_h2">Simple, honest packages</h2>
+      <p class="section-lead reveal" data-i18n="price_lead">The same packages as my Fiverr gig — no hidden charges. Need several videos? Ask on WhatsApp for a bundle price.</p>
       <div class="pricing-grid">
         <article class="price-card reveal">
-          <h3>Basic</h3>
+          <h3 data-i18n="price_basic_name">Basic</h3>
           <p class="price">$5</p>
           <ul>
-            <li>1 AI short video</li>
-            <li>Up to 15 seconds</li>
-            <li>1 revision</li>
-            <li>2-day delivery</li>
+            <li data-i18n="li_short">1 AI short video</li>
+            <li data-i18n="li_15">Up to 15 seconds</li>
+            <li data-i18n="li_rev1">1 revision</li>
+            <li data-i18n="li_del2">2-day delivery</li>
           </ul>
-          <a class="btn btn-ghost" href="https://wa.me/923187579301?text=Hi%20Usman%2C%20I%20want%20the%20Basic%20package%20(%245)%20for%20an%20AI%20short%20video." target="_blank" rel="noopener">Start with Basic</a>
+          <a class="btn btn-ghost" href="https://wa.me/923187579301?text=Hi%20Usman%2C%20I%20want%20the%20Basic%20package%20(%245)%20for%20an%20AI%20short%20video." target="_blank" rel="noopener" data-i18n="price_btn_basic">Start with Basic</a>
         </article>
         <article class="price-card featured reveal">
-          <p class="badge">Most Popular</p>
-          <h3>Standard</h3>
+          <p class="badge" data-i18n="price_badge">Most Popular</p>
+          <h3 data-i18n="price_standard_name">Standard</h3>
           <p class="price">$10</p>
           <ul>
-            <li>1 AI video ad</li>
-            <li>Up to 30 seconds</li>
-            <li>Urdu or English voiceover</li>
-            <li>2 revisions</li>
-            <li>3-day delivery</li>
+            <li data-i18n="li_ad">1 AI video ad</li>
+            <li data-i18n="li_30">Up to 30 seconds</li>
+            <li data-i18n="li_vo">Urdu or English voiceover</li>
+            <li data-i18n="li_rev2">2 revisions</li>
+            <li data-i18n="li_del3">3-day delivery</li>
           </ul>
-          <a class="btn btn-primary" href="https://wa.me/923187579301?text=Hi%20Usman%2C%20I%20want%20the%20Standard%20package%20(%2410)%20for%20an%20AI%20video%20ad." target="_blank" rel="noopener">Start with Standard</a>
+          <a class="btn btn-primary" href="https://wa.me/923187579301?text=Hi%20Usman%2C%20I%20want%20the%20Standard%20package%20(%2410)%20for%20an%20AI%20video%20ad." target="_blank" rel="noopener" data-i18n="price_btn_standard">Start with Standard</a>
         </article>
         <article class="price-card reveal">
-          <h3>Premium</h3>
+          <h3 data-i18n="price_premium_name">Premium</h3>
           <p class="price">$20</p>
           <ul>
-            <li>1 AI video ad</li>
-            <li>Up to 60 seconds</li>
-            <li>Voiceover + subtitles</li>
-            <li>3 revisions</li>
-            <li>Priority delivery</li>
+            <li data-i18n="li_ad">1 AI video ad</li>
+            <li data-i18n="li_60">Up to 60 seconds</li>
+            <li data-i18n="li_vo_sub">Voiceover + subtitles</li>
+            <li data-i18n="li_rev3">3 revisions</li>
+            <li data-i18n="li_del_pri">Priority delivery</li>
           </ul>
-          <a class="btn btn-ghost" href="https://wa.me/923187579301?text=Hi%20Usman%2C%20I%20want%20the%20Premium%20package%20(%2420)%20for%20an%20AI%20video%20ad." target="_blank" rel="noopener">Start with Premium</a>
+          <a class="btn btn-ghost" href="https://wa.me/923187579301?text=Hi%20Usman%2C%20I%20want%20the%20Premium%20package%20(%2420)%20for%20an%20AI%20video%20ad." target="_blank" rel="noopener" data-i18n="price_btn_premium">Start with Premium</a>
         </article>
       </div>
     </div>
@@ -387,17 +402,17 @@
   <section class="section" id="about">
     <div class="container about-grid">
       <figure class="about-photo reveal">
-        <img src="assets/images/usman-kalera.jpg" alt="Studio portrait of Usman Kalera, AI video creator and founder of Rakhzaar Tech" loading="lazy" width="1114" height="1411">
+        <picture><source srcset="assets/images/usman-kalera.webp" type="image/webp"><img src="assets/images/usman-kalera.jpg" alt="Studio portrait of Usman Kalera, AI video creator and founder of Rakhzaar Tech" data-i18n-alt="about_img_alt" loading="lazy" width="1114" height="1411"></picture>
       </figure>
       <div class="about-copy reveal">
-        <p class="eyebrow">About me</p>
-        <h2>The creator behind the videos</h2>
-        <p>I am a BS Artificial Intelligence student and the Founder &amp; CEO of <strong>Rakhzaar Tech</strong>, working from Lahore, Pakistan with clients worldwide — including a real-estate client in Oman.</p>
-        <p>For the past 1.5 years I have been producing generative-AI videos for brands and sellers: ads, reels, UGC-style product videos and cinematic films. My specialties are <strong>consistent characters across every shot</strong> and <strong>natural Urdu &amp; English voiceovers with subtitles</strong> — the details that make an AI video feel real.</p>
-        <p>Every project is handled by me personally, from the first hook to the final cut.</p>
+        <p class="eyebrow" data-i18n="about_eyebrow">About me</p>
+        <h2 data-i18n="about_h2">The creator behind the videos</h2>
+        <p data-i18n="about_p1">I am a BS Artificial Intelligence student and the Founder &amp; CEO of <strong>Rakhzaar Tech</strong>, working from Lahore, Pakistan with clients worldwide — including a real-estate client in Oman.</p>
+        <p data-i18n="about_p2">For the past 1.5 years I have been producing generative-AI videos for brands and sellers: ads, reels, UGC-style product videos and cinematic films. My specialties are <strong>consistent characters across every shot</strong> and <strong>natural Urdu &amp; English voiceovers with subtitles</strong> — the details that make an AI video feel real.</p>
+        <p data-i18n="about_p3">Every project is handled by me personally, from the first hook to the final cut.</p>
         <div class="about-ctas">
-          <a class="btn btn-primary" href="#contact">Work with me</a>
-          <a class="btn btn-ghost" href="https://usmankalera-dev.github.io/portfolio/" target="_blank" rel="noopener">See my main portfolio</a>
+          <a class="btn btn-primary" href="#contact" data-i18n="about_btn1">Work with me</a>
+          <a class="btn btn-ghost" href="https://usmankalera-dev.github.io/portfolio/" target="_blank" rel="noopener" data-i18n="about_btn2">See my main portfolio</a>
         </div>
       </div>
     </div>
@@ -406,37 +421,37 @@
   <!-- ============ FAQ ============ -->
   <section class="section section-alt" id="faq">
     <div class="container narrow">
-      <p class="eyebrow reveal">Questions</p>
-      <h2 class="reveal">Frequently asked questions</h2>
+      <p class="eyebrow reveal" data-i18n="faq_eyebrow">Questions</p>
+      <h2 class="reveal" data-i18n="faq_h2">Frequently asked questions</h2>
       <div class="faq-list">
         <div class="faq-item reveal">
-          <h3 class="faq-q"><button class="faq-toggle" aria-expanded="false">How much does an AI video cost?<span class="faq-icon" aria-hidden="true">+</span></button></h3>
+          <h3 class="faq-q"><button class="faq-toggle" aria-expanded="false"><span data-i18n="faq_q1">How much does an AI video cost?</span><span class="faq-icon" aria-hidden="true">+</span></button></h3>
           <div class="faq-a" hidden>
-            <p>Prices start at $5 for a Basic short video (up to 15s). The Standard package is $10 for a video ad up to 30s with voiceover, and Premium is $20 for up to 60s with voiceover and subtitles. For longer or multiple videos, message me on WhatsApp for a custom quote.</p>
+            <p data-i18n="faq_a1">Prices start at $5 for a Basic short video (up to 15s). The Standard package is $10 for a video ad up to 30s with voiceover, and Premium is $20 for up to 60s with voiceover and subtitles. For longer or multiple videos, message me on WhatsApp for a custom quote.</p>
           </div>
         </div>
         <div class="faq-item reveal">
-          <h3 class="faq-q"><button class="faq-toggle" aria-expanded="false">How fast will I get my video?<span class="faq-icon" aria-hidden="true">+</span></button></h3>
+          <h3 class="faq-q"><button class="faq-toggle" aria-expanded="false"><span data-i18n="faq_q2">How fast will I get my video?</span><span class="faq-icon" aria-hidden="true">+</span></button></h3>
           <div class="faq-a" hidden>
-            <p>Delivery takes 2–5 days depending on the package: Basic in 2 days, Standard in 3 days, and Premium with priority delivery. If you have an urgent launch date, tell me on WhatsApp and I will confirm what is possible before you order.</p>
+            <p data-i18n="faq_a2">Delivery takes 2–5 days depending on the package: Basic in 2 days, Standard in 3 days, and Premium with priority delivery. If you have an urgent launch date, tell me on WhatsApp and I will confirm what is possible before you order.</p>
           </div>
         </div>
         <div class="faq-item reveal">
-          <h3 class="faq-q"><button class="faq-toggle" aria-expanded="false">What do you need from me to start?<span class="faq-icon" aria-hidden="true">+</span></button></h3>
+          <h3 class="faq-q"><button class="faq-toggle" aria-expanded="false"><span data-i18n="faq_q3">What do you need from me to start?</span><span class="faq-icon" aria-hidden="true">+</span></button></h3>
           <div class="faq-a" hidden>
-            <p>Just your product photos or a link to your product page, your logo if you have one, and a few lines about your offer and who the video is for. I handle the concept, script, voiceover and editing — you simply review and approve.</p>
+            <p data-i18n="faq_a3">Just your product photos or a link to your product page, your logo if you have one, and a few lines about your offer and who the video is for. I handle the concept, script, voiceover and editing — you simply review and approve.</p>
           </div>
         </div>
         <div class="faq-item reveal">
-          <h3 class="faq-q"><button class="faq-toggle" aria-expanded="false">How many revisions are included?<span class="faq-icon" aria-hidden="true">+</span></button></h3>
+          <h3 class="faq-q"><button class="faq-toggle" aria-expanded="false"><span data-i18n="faq_q4">How many revisions are included?</span><span class="faq-icon" aria-hidden="true">+</span></button></h3>
           <div class="faq-a" hidden>
-            <p>Basic includes 1 revision, Standard includes 2 revisions and Premium includes 3 revisions. Revisions cover tweaks to visuals, on-screen text and voiceover so the final video matches your brand.</p>
+            <p data-i18n="faq_a4">Basic includes 1 revision, Standard includes 2 revisions and Premium includes 3 revisions. Revisions cover tweaks to visuals, on-screen text and voiceover so the final video matches your brand.</p>
           </div>
         </div>
         <div class="faq-item reveal">
-          <h3 class="faq-q"><button class="faq-toggle" aria-expanded="false">Can you make my video in Urdu?<span class="faq-icon" aria-hidden="true">+</span></button></h3>
+          <h3 class="faq-q"><button class="faq-toggle" aria-expanded="false"><span data-i18n="faq_q5">Can you make my video in Urdu?</span><span class="faq-icon" aria-hidden="true">+</span></button></h3>
           <div class="faq-a" hidden>
-            <p>Yes. I produce AI voiceovers in both Urdu and English, and Premium videos include subtitles. Many of my clients sell in Pakistan and the Gulf, so Urdu voiceover with English subtitles is one of my most requested combinations.</p>
+            <p data-i18n="faq_a5">Yes. I produce AI voiceovers in both Urdu and English, and Premium videos include subtitles. Many of my clients sell in Pakistan and the Gulf, so Urdu voiceover with English subtitles is one of my most requested combinations.</p>
           </div>
         </div>
       </div>
@@ -446,34 +461,34 @@
   <!-- ============ CONTACT ============ -->
   <section class="section" id="contact">
     <div class="container narrow">
-      <p class="eyebrow reveal">Start a project</p>
-      <h2 class="reveal">Tell me about your product</h2>
-      <p class="section-lead reveal">Fill this in and it opens WhatsApp with your brief ready to send. I usually reply the same day.</p>
+      <p class="eyebrow reveal" data-i18n="contact_eyebrow">Start a project</p>
+      <h2 class="reveal" data-i18n="contact_h2">Tell me about your product</h2>
+      <p class="section-lead reveal" data-i18n="contact_lead">Fill this in and it opens WhatsApp with your brief ready to send. I usually reply the same day.</p>
       <form class="brief-form reveal" id="briefForm">
         <label>
-          Your name
-          <input type="text" id="bfName" name="name" placeholder="e.g. Ayesha Khan" autocomplete="name">
+          <span data-i18n="form_name">Your name</span>
+          <input type="text" id="bfName" name="name" placeholder="e.g. Ayesha Khan" data-i18n-ph="form_name_ph" autocomplete="name">
         </label>
         <label>
-          Your product
-          <input type="text" id="bfProduct" name="product" placeholder="e.g. Resin jewellery, real estate, clothing..." required>
+          <span data-i18n="form_product">Your product</span>
+          <input type="text" id="bfProduct" name="product" placeholder="e.g. Resin jewellery, real estate, clothing..." data-i18n-ph="form_product_ph" required>
         </label>
         <label>
-          Video type
+          <span data-i18n="form_type">Video type</span>
           <select id="bfType" name="type">
-            <option>AI Video Ad (Social Media)</option>
-            <option>Reel / TikTok / Short</option>
-            <option>UGC-Style Product Video</option>
-            <option>Cinematic Product Film</option>
-            <option>Not sure yet — advise me</option>
+            <option value="AI Video Ad (Social Media)" data-i18n="form_opt1">AI Video Ad (Social Media)</option>
+            <option value="Reel / TikTok / Short" data-i18n="form_opt2">Reel / TikTok / Short</option>
+            <option value="UGC-Style Product Video" data-i18n="form_opt3">UGC-Style Product Video</option>
+            <option value="Cinematic Product Film" data-i18n="form_opt4">Cinematic Product Film</option>
+            <option value="Not sure yet — advise me" data-i18n="form_opt5">Not sure yet — advise me</option>
           </select>
         </label>
         <label>
-          Anything else? <span class="optional">(optional)</span>
-          <textarea id="bfMsg" name="message" rows="3" placeholder="Your offer, audience, deadline..."></textarea>
+          <span data-i18n="form_extra">Anything else?</span> <span class="optional" data-i18n="form_optional">(optional)</span>
+          <textarea id="bfMsg" name="message" rows="3" placeholder="Your offer, audience, deadline..." data-i18n-ph="form_msg_ph"></textarea>
         </label>
-        <button type="submit" class="btn btn-whatsapp btn-big">Send brief on WhatsApp</button>
-        <p class="form-note">Prefer Fiverr? <a href="https://www.fiverr.com/usman0_kalera" target="_blank" rel="noopener">Order through my Fiverr gig</a> instead.</p>
+        <button type="submit" class="btn btn-whatsapp btn-big" data-i18n="form_submit">Send brief on WhatsApp</button>
+        <p class="form-note"><span data-i18n="form_note_pre">Prefer Fiverr?</span> <a href="https://www.fiverr.com/usman0_kalera" target="_blank" rel="noopener" data-i18n="form_note_link">Order through my Fiverr gig</a><span data-i18n="form_note_suf"> instead.</span></p>
       </form>
     </div>
   </section>
@@ -481,16 +496,39 @@
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <p class="footer-brand">Usman Kalera — AI Video Creator · Founder &amp; CEO, Rakhzaar Tech · Lahore, Pakistan</p>
-    <nav class="footer-links" aria-label="Footer">
-      <a href="https://www.fiverr.com/usman0_kalera" target="_blank" rel="noopener">Fiverr</a>
-      <a href="https://usmankalera-dev.github.io/portfolio/" target="_blank" rel="noopener">Main Portfolio</a>
-      <a href="https://usmankalera-dev.github.io/rakhzaar-tech/" target="_blank" rel="noopener">Rakhzaar Tech</a>
-      <a href="https://wa.me/923187579301" target="_blank" rel="noopener">WhatsApp</a>
+    <p class="footer-brand" data-i18n="footer_brand">Usman Kalera — AI Video Creator · Founder &amp; CEO, Rakhzaar Tech · Lahore, Pakistan</p>
+    <div class="share-row">
+      <span class="share-label" data-i18n="share_label">Share this portfolio</span>
+      <div class="share-btns">
+        <a class="share-btn" href="https://wa.me/?text=Usman%20Kalera%20%E2%80%94%20AI%20Video%20Creator%3A%20AI%20video%20ads%2C%20reels%20%26%20cinematic%20product%20films%20from%20%245%20https%3A%2F%2Fusmankalera-dev.github.io%2Fai-video-creator%2F" target="_blank" rel="noopener" aria-label="Share on WhatsApp" data-i18n-aria="share_wa_label"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.7l.5-.6c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3z"/></svg></a>
+        <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fusmankalera-dev.github.io%2Fai-video-creator%2F" target="_blank" rel="noopener" aria-label="Share on Facebook" data-i18n-aria="share_fb_label"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a class="share-btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fusmankalera-dev.github.io%2Fai-video-creator%2F&amp;text=Usman%20Kalera%20%E2%80%94%20AI%20Video%20Creator%3A%20AI%20video%20ads%2C%20reels%20%26%20cinematic%20product%20films%20from%20%245" target="_blank" rel="noopener" aria-label="Share on X" data-i18n-aria="share_x_label"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+        <button class="share-btn copy-btn" id="copyLink" type="button" aria-label="Copy portfolio link" data-i18n-aria="share_copy_label"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span class="copy-label" data-i18n="copy_link">Copy Link</span></button>
+      </div>
+    </div>
+    <nav class="footer-links" aria-label="Footer" data-i18n-aria="footer_nav_label">
+      <a href="https://www.fiverr.com/usman0_kalera" target="_blank" rel="noopener" data-i18n="foot_fiverr">Fiverr</a>
+      <a href="https://usmankalera-dev.github.io/portfolio/" target="_blank" rel="noopener" data-i18n="foot_main">Main Portfolio</a>
+      <a href="https://usmankalera-dev.github.io/rakhzaar-tech/" target="_blank" rel="noopener" data-i18n="foot_rakhzaar">Rakhzaar Tech</a>
+      <a href="https://wa.me/923187579301" target="_blank" rel="noopener" data-i18n="foot_wa">WhatsApp</a>
     </nav>
-    <p class="footer-copy">© <span id="year">2026</span> Usman Kalera. All videos on this page are my own work.</p>
+    <p class="footer-copy">© <span id="year">2026</span> <span data-i18n="footer_rights">Usman Kalera. All videos on this page are my own work.</span></p>
   </div>
 </footer>
+
+<a class="wa-float" href="https://wa.me/923187579301?text=Hi%20Usman%2C%20I%20want%20an%20AI%20video%20for%20my%20product..." target="_blank" rel="noopener" aria-label="Chat on WhatsApp" data-i18n-aria="wa_float_label">
+  <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.7l.5-.6c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3z"/></svg>
+</a>
+
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Film scene viewer" data-i18n-aria="lb_label">
+  <button class="lb-btn lb-close" id="lbClose" type="button" aria-label="Close" data-i18n-aria="lb_close">✕</button>
+  <button class="lb-btn lb-prev" id="lbPrev" type="button" aria-label="Previous scene" data-i18n-aria="lb_prev">‹</button>
+  <figure class="lb-figure">
+    <img id="lbImg" alt="Film scene, enlarged view" data-i18n-alt="lb_img_alt">
+    <figcaption class="lb-caption"><span id="lbCaption"></span> <span class="lb-count" id="lbCount"></span></figcaption>
+  </figure>
+  <button class="lb-btn lb-next" id="lbNext" type="button" aria-label="Next scene" data-i18n-aria="lb_next">›</button>
+</div>
 
 <script src="script.js"></script>
 </body>

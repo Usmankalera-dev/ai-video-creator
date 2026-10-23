@@ -15,6 +15,7 @@
   --radius:20px;
   --shadow:0 18px 45px rgba(0,0,0,.42);
   --header-h:72px;
+  --header-bg:rgba(23,16,29,.86);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 12px)}
@@ -45,7 +46,7 @@ h3{font-size:1.22rem}
 /* ---------- Header ---------- */
 .site-header{
   position:sticky;top:0;z-index:50;height:var(--header-h);
-  background:rgba(23,16,29,.86);backdrop-filter:blur(12px);
+  background:var(--header-bg);backdrop-filter:blur(12px);
   border-bottom:1px solid var(--line);
 }
 .header-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem}
@@ -112,7 +113,7 @@ h3{font-size:1.22rem}
 .value-prop{color:var(--muted);font-size:1.13rem;margin:1.2rem 0 1.7rem;max-width:520px}
 .hero-ctas{display:flex;gap:.9rem;flex-wrap:wrap}
 .hero-points{list-style:none;display:flex;gap:1.4rem;flex-wrap:wrap;margin-top:1.6rem;color:var(--faint);font-size:.93rem;font-weight:500}
-.hero-points li::before{content:"✦";color:var(--rose);margin-right:.45rem}
+.hero-points li::before{content:"✦";color:var(--rose);margin-inline-end:.45rem}
 .hero-media{
   background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
   padding:10px;box-shadow:var(--shadow);
@@ -211,7 +212,7 @@ h3{font-size:1.22rem}
 .price{font-family:'Fraunces',serif;font-size:2.6rem;font-weight:700;margin:.4rem 0 1rem}
 .price-card ul{list-style:none;margin-bottom:1.7rem;color:var(--muted)}
 .price-card ul li{padding:.42rem 0;border-bottom:1px dashed rgba(205,191,216,.15)}
-.price-card ul li::before{content:"✓";color:var(--rose);font-weight:700;margin-right:.55rem}
+.price-card ul li::before{content:"✓";color:var(--rose);font-weight:700;margin-inline-end:.55rem}
 .price-card .btn{margin-top:auto}
 
 /* ---------- About ---------- */
@@ -231,7 +232,7 @@ h3{font-size:1.22rem}
 .faq-toggle{
   width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;
   background:none;border:none;color:var(--ink);font:inherit;font-weight:600;font-size:1.02rem;
-  text-align:left;padding:1.15rem 1.3rem;cursor:pointer;min-height:56px;
+  text-align:start;padding:1.15rem 1.3rem;cursor:pointer;min-height:56px;
 }
 .faq-icon{color:var(--rose);font-size:1.5rem;font-weight:400;transition:.25s;line-height:1}
 .faq-toggle[aria-expanded="true"] .faq-icon{transform:rotate(45deg)}
@@ -299,4 +300,143 @@ h3{font-size:1.22rem}
   .hero{padding:48px 0 44px}
   .hero-ctas .btn{flex:1 1 100%}
   .brief-form{padding:1.4rem}
+}
+
+/* ============ Round 3: light theme, header controls, Urdu, float, lightbox, share ============ */
+
+/* ---------- Light theme ---------- */
+html[data-theme="light"]{
+  --bg:#faf5ee;
+  --bg-2:#f2e9db;
+  --panel:#ffffff;
+  --panel-2:#fdf1e2;
+  --ink:#2b1a34;
+  --muted:#5d4768;
+  --faint:#87719b;
+  --rose:#bd5f43;
+  --rose-2:#bc5583;
+  --violet:#7a5bd4;
+  --line:rgba(122,72,110,.24);
+  --shadow:0 18px 45px rgba(96,54,86,.16);
+  --header-bg:rgba(250,245,238,.88);
+}
+html[data-theme="light"] .price-card ul li{border-bottom-color:rgba(93,71,104,.18)}
+
+/* ---------- Header controls (language + theme) ---------- */
+.header-right{display:flex;align-items:center;gap:1.1rem}
+.hdr-actions{display:flex;align-items:center;gap:.6rem}
+.lang-toggle{
+  display:inline-flex;align-items:center;gap:.4rem;min-height:40px;
+  background:var(--panel);border:1px solid var(--line);border-radius:999px;
+  color:var(--muted);font:inherit;font-size:.82rem;font-weight:600;
+  padding:.42rem .8rem;cursor:pointer;transition:.2s;
+}
+.lang-toggle:hover{border-color:var(--rose);color:var(--ink)}
+.lang-opt{opacity:.5;transition:.2s}
+.lang-opt.is-active{opacity:1;color:var(--rose)}
+.lang-opt[data-lang-opt="ur"]{font-family:'Noto Nastaliq Urdu',serif;font-size:.86rem;line-height:1.8;padding-bottom:2px}
+.lang-sep{opacity:.35}
+.theme-toggle{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:42px;height:42px;border-radius:50%;cursor:pointer;
+  background:var(--panel);border:1px solid var(--line);color:var(--rose);transition:.2s;
+}
+.theme-toggle:hover{border-color:var(--rose)}
+.theme-toggle .icon-sun{display:none}
+html[data-theme="light"] .theme-toggle .icon-sun{display:block}
+html[data-theme="light"] .theme-toggle .icon-moon{display:none}
+
+/* ---------- Urdu / RTL typography ---------- */
+.marquee{direction:ltr}
+html[lang="ur"] body{font-family:'Noto Nastaliq Urdu','Inter',serif;line-height:1.95}
+html[lang="ur"] h1,html[lang="ur"] h2,html[lang="ur"] h3,
+html[lang="ur"] .brand-text,html[lang="ur"] .marquee-track span,
+html[lang="ur"] .price,html[lang="ur"] .footer-brand,html[lang="ur"] .step-num{
+  font-family:'Noto Nastaliq Urdu',serif;
+}
+html[lang="ur"] .eyebrow,html[lang="ur"] .brand-text small,
+html[lang="ur"] .badge,html[lang="ur"] .tag{letter-spacing:.02em;text-transform:none}
+html[lang="ur"] .film-caption{letter-spacing:0}
+html[lang="ur"] .btn,html[lang="ur"] .faq-toggle{line-height:1.9}
+html[lang="ur"] input,html[lang="ur"] select,html[lang="ur"] textarea{line-height:1.9}
+
+/* ---------- Film card keeps its cinema colours in both themes ---------- */
+.film-card{color:#f5eff8}
+.film-card .film-meta p:not(.film-caption){color:#cdbfd8}
+.film-card .film-caption{color:#e8a58c}
+.film-card .tag{color:#e8a58c;border-color:rgba(232,165,140,.35)}
+.strip-item{cursor:pointer}
+.strip-item:focus-visible{outline:2px solid var(--violet);outline-offset:2px}
+
+/* ---------- Floating WhatsApp ---------- */
+.wa-float{
+  position:fixed;right:20px;bottom:20px;z-index:40;
+  width:58px;height:58px;border-radius:50%;
+  background:#25d366;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 10px 26px rgba(0,0,0,.35);
+  animation:waPulse 2.4s ease-out infinite;transition:transform .2s;
+}
+.wa-float:hover{text-decoration:none;transform:scale(1.07)}
+@keyframes waPulse{
+  0%{box-shadow:0 10px 26px rgba(0,0,0,.35),0 0 0 0 rgba(37,211,102,.45)}
+  70%{box-shadow:0 10px 26px rgba(0,0,0,.35),0 0 0 16px rgba(37,211,102,0)}
+  100%{box-shadow:0 10px 26px rgba(0,0,0,.35),0 0 0 0 rgba(37,211,102,0)}
+}
+@media (prefers-reduced-motion:reduce){
+  .wa-float{animation:none}
+}
+
+/* ---------- Lightbox ---------- */
+.lightbox{
+  position:fixed;inset:0;z-index:90;
+  background:rgba(10,6,14,.93);
+  display:flex;align-items:center;justify-content:center;
+  padding:1.2rem;
+}
+.lightbox[hidden]{display:none}
+.lb-figure{max-width:min(1000px,92vw);text-align:center}
+.lb-figure img{
+  max-width:100%;max-height:78vh;width:auto;height:auto;
+  margin-inline:auto;border-radius:12px;
+  box-shadow:0 24px 60px rgba(0,0,0,.6);
+}
+.lb-caption{color:#f5eff8;margin-top:1rem;font-size:1rem}
+.lb-count{color:#a68fb8;font-size:.9rem}
+.lb-btn{
+  position:absolute;width:48px;height:48px;border-radius:50%;
+  background:rgba(36,24,48,.88);border:1px solid rgba(232,165,140,.35);
+  color:#f5eff8;font-size:1.5rem;line-height:1;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:.2s;
+}
+.lb-btn:hover{border-color:#e8a58c;color:#e8a58c}
+.lb-close{top:16px;inset-inline-end:16px;font-size:1.05rem}
+.lb-prev{left:14px;top:50%;transform:translateY(-50%)}
+.lb-next{right:14px;top:50%;transform:translateY(-50%)}
+
+/* ---------- Share row ---------- */
+.share-row{display:flex;flex-direction:column;align-items:center;gap:.7rem;margin-bottom:1.5rem}
+.share-label{font-weight:600;color:var(--muted);font-size:.92rem;letter-spacing:.04em}
+html[lang="ur"] .share-label{letter-spacing:0}
+.share-btns{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+.share-btn{
+  display:inline-flex;align-items:center;gap:.45rem;min-height:44px;
+  padding:.5rem .8rem;border-radius:999px;
+  border:1px solid var(--line);background:var(--panel);
+  color:var(--muted);font:inherit;font-size:.9rem;font-weight:600;cursor:pointer;transition:.2s;
+}
+.share-btn:hover{border-color:var(--rose);color:var(--rose);text-decoration:none}
+.share-btn.copied{border-color:#25d366;color:#1eb85a}
+
+/* ---------- Small screens: header crowding ---------- */
+@media (max-width:640px){
+  html[data-theme="light"] .site-nav a{border-bottom-color:rgba(93,71,104,.14)}
+}
+@media (max-width:520px){
+  .header-inner{gap:.5rem}
+  .header-right{gap:.55rem}
+  .hdr-actions{gap:.45rem}
+  .brand-text small{display:none}
+  .lang-toggle{padding:.36rem .6rem}
+  .wa-float{right:16px;bottom:16px;width:54px;height:54px}
 }
