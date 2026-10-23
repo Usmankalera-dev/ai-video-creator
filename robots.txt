@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://usmankalera-dev.github.io/ai-video-creator/sitemap.xml
