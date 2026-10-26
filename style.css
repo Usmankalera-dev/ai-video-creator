@@ -540,3 +540,18 @@ html[lang="ur"] .cta-eyebrow{letter-spacing:.02em;text-transform:none}
 .form-error{color:#ff9d8a;font-size:.9rem;font-weight:500;line-height:1.5}
 html[data-theme="light"] .form-error{color:#b3261e}
 .brief-form input[aria-invalid="true"]{border-color:#e5484d}
+
+/* ============ Round 8: Latest work gallery — portrait pair, badges, hover ============ */
+.latest-grid{align-items:stretch}
+.latest-grid .film-card{transition:transform .25s,border-color .25s,box-shadow .25s}
+.latest-grid .film-card:hover{transform:translateY(-5px);border-color:rgba(232,165,140,.45);box-shadow:var(--shadow)}
+html[data-theme="light"] .latest-grid .film-card:hover{border-color:rgba(122,72,110,.45)}
+.latest-grid .film-player{position:relative}
+.latest-grid .film-video{transition:transform .45s ease}
+.latest-grid .film-card:hover .film-video{transform:scale(1.03)}
+.duration-badge{position:absolute;top:.75rem;inset-inline-end:.75rem;z-index:2;background:rgba(0,0,0,.68);color:#fff;font-size:.8rem;font-weight:700;letter-spacing:.02em;padding:.28rem .65rem;border-radius:999px;pointer-events:none}
+.latest-card-portrait{grid-column:auto;width:100%;max-width:340px;justify-self:center}
+@media (min-width:1101px){
+  .latest-card-portrait{grid-column:auto}
+}
+.tag-new{margin-inline-start:.4rem;background:var(--rose);color:#22122e;border-color:var(--rose)}
